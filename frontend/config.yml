@@ -1,0 +1,6 @@
+# server hosting the API
+SERVER_ADDRESS: localhost
+SERVER_PORT: 5000
+# Used for testing purposes with ControlChromeDevTools.py
+PROXY_ADDRESS: localhost
+PROXY_PORT: 5001

@@ -1,0 +1,15 @@
+Flask==2.0.2
+Flask_Cors==3.0.10
+gtfs-realtime-bindings==0.0.7
+networkx==2.8.6
+numpy==1.23.3
+pandas==1.4.4
+protobuf==3.20.2
+protobuf3_to_dict==0.1.5
+pytz==2022.2.1
+PyYAML==6.0
+requests==2.28.1
+schedule==1.1.0
+selenium==4.4.3
+Shapely==1.8.0
+webdriver_manager==3.5.2

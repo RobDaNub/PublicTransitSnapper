@@ -1,0 +1,6 @@
+route_id,service_id,trip_id,trip_headsign,trip_short_name,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed
+91-10-A-j22-1,TA+k8700,1.TA.91-10-A-j22-1.1.H,"Oberwil BL, Hüslimatt",21121,0,,shp_0_573,0,0
+91-10-A-j22-1,TA+k8700,1.TA.91-10-A-j22-1.2.H,"Oberwil BL, Hüslimatt",21121,0,,shp_0_42,0,0
+91-10-A-j22-1,TA+k8700,1.TA.91-10-A-j22-1.3.H,"Oberwil BL, Hüslimatt",21121,0,,shp_0_573,0,0
+91-20-Y-j22-1,TA+dny10,117.TA.91-20-Y-j22-1.13.R,Le Locle,6380,1,,shp_2_13478,0,0
+92-8-L-j22-1,TA+3n,1.TA.92-8-L-j22-1.1.H,"Solothurn, Hauptbahnhof",8024,0,,shp_3_5378,0,0

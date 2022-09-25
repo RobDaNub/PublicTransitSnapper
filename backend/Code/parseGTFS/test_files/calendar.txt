@@ -1,0 +1,4 @@
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+TA+k8700,0,0,0,1,0,0,0,20211212,20221210
+TA+dny10,0,0,0,0,0,1,1,20211212,20221210
+TA+3n,1,1,0,1,1,0,0,20211212,20221210

@@ -1,0 +1,4 @@
+service_id,date,exception_type
+TA+k8700,20211223,2
+TA+dny10,20220405,1
+TA+3n,20211227,2
