@@ -350,8 +350,8 @@ const tuple<const map<string, string>,
 // ___________________________________________________________________________
 void generate_routes_file_dicts(const string& gtfs_folder,
                                 const string& output_folder) {
-    CSV_READER(5, "routes.txt")
-    if (in.has_column("route_color") && in.has_column("route_text_color")) {
+    try {
+        CSV_READER(5, "routes.txt")
         in.read_header(io::ignore_extra_column,
             "route_id", "route_short_name",
             "route_type", "route_color", "route_text_color");
@@ -374,22 +374,22 @@ void generate_routes_file_dicts(const string& gtfs_folder,
         }
 
         write_to_file(j, ROUTE_ID_TO_ROUTE_INFORMATION_FILE, output_folder);
-    } else {
-        // we need the route coloe and text color for display in the app
-        // since it is optional, if not available use default value
-        io::CSVReader<3, io::trim_chars<>, io::double_quote_escape<',', '"'>>
-            in_new(gtfs_folder + "routes.txt");
-        in_new.read_header(io::ignore_extra_column,
+    } catch (const io::error::missing_column_in_header& e) {
+        CSV_READER(3, "routes.txt")
+        in.read_header(io::ignore_extra_column,
             "route_id", "route_short_name",
             "route_type");
-
         json j;
         string route_id; string route_short_name; string route_type;
         string route_color = ROUTE_COLOR_DEFAULT;
         string route_text_color = ROUTE_TEXT_COLOR_DEFAULT;
 
-        while (in_new.read_row(route_id, route_short_name, route_type)) {
+        while (in.read_row(route_id, route_short_name, route_type)) {
             // route color and text color are optional, we need them for drawing
+            if (route_color.empty())
+                route_color = ROUTE_COLOR_DEFAULT;
+            if (route_text_color.empty())
+                route_text_color = ROUTE_TEXT_COLOR_DEFAULT;
 
             j[route_id] = make_tuple(route_short_name, std::stoi(route_type),
                                     route_color, route_text_color);
